@@ -11,7 +11,7 @@ var reverse = function(x) {
       reverse order
       join it back together
     */
-    var str = Math.abs(x).toString().split().reverse().join();
+    var str = Math.abs(x).toString().split('').reverse().join('');
     
     /*
       if original value is negative, add "-"
@@ -22,8 +22,8 @@ var reverse = function(x) {
       Set parameter within 32-bit range
       anything outside that range returns "0"
     */
-    if(Math.abs(x) > 2^31){
-        return "0";
+    if(rev > 2**31 || rev < -(2**32)){
+        return 0;
     }else{
         return rev;
     }
